@@ -13,7 +13,7 @@ window.addEventListener("load", () => {
     const bookName = document.querySelector(".main-media-title");
     const authorName = document.querySelector(".main-media-name");
 
-    const songListPlay = document.querySelectorAll(".song-list-play");
+    const songListPlayBtn = document.querySelectorAll(".song-list-play");
 
 
     const podList = document.querySelector(".recent-play-list-display");
@@ -46,102 +46,62 @@ window.addEventListener("load", () => {
 
 
 
-    // songList.map((index) => {
-    //     console.log(index);
-    //     podList.innerHTML = `
-    //         <div class="recent-play-list">
-    //             <div class="recent-play-details-display">
+    let html = ""
+    songList.forEach(index => {
+        html += `
+            <div class="recent-play-list">
+                <div class="recent-play-details-display">
 
-    //                 <div class="recent-play-index">
-    //                     <p>${index.id}</p>
-    //                 </div>
-
-
-    //                 <div class="recent-play-img-container">
-    //                     <div class="recent-play-img">
-    //                         <img src=${index.image} alt="power">
-    //                     </div>
-
-    //                     <div class="recent-play-detail">
-    //                         <p class="first-text">${index.podName}</p>
-    //                         <p class="padding-text"></p>
-    //                         <p class="second-text">${index.author}</p>
-    //                     </div>
-    //                 </div>
-    //             </div>
+                    <div class="recent-play-index">
+                        <p>${index.id}</p>
+                    </div>
 
 
-    //             <div class="recent-play-button-container">
-    //                 <div class="recent-play-duration">
-    //                     <p>12:90</p>
-    //                 </div>
-    //                 <div class="recent-btn-display">
-    //                     <button>
-    //                         <img src="./assets/images/play.svg" alt="play">
-    //                     </button>
-    //                 </div>
+                    <div class="recent-play-img-container">
+                        <div class="recent-play-img">
+                            <img src=${index.image} alt="power">
+                        </div>
 
-    //                 <div class="recent-btn-display">
-    //                     <button>
-    //                         <img src="./assets/images/add.svg" alt="play">
-    //                     </button>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     `
-    // })
-
-    // let songDisplay = songList.map(songs => `
-    // <div class="recent-play-list">
-    //     <div class="recent-play-details-display">
-
-    //         <div class="recent-play-index">
-    //             <p>${songs.id}</p>
-    //         </div>
+                        <div class="recent-play-detail">
+                            <p class="first-text">${index.podName}</p>
+                            <p class="padding-text"></p>
+                            <p class="second-text">${index.author}</p>
+                        </div>
+                    </div>
+                </div>
 
 
-    //         <div class="recent-play-img-container">
-    //             <div class="recent-play-img">
-    //                 <img src=${songs.image} alt="power">
-    //             </div>
+                <div class="recent-play-button-container">
+                    <div class="recent-play-duration">
+                        <p>12:90</p>
+                    </div>
+                    <div class="recent-btn-display">
+                        <button class="song-list-play">
+                            <img src="./assets/images/play.svg" alt="play">
+                        </button>
+                    </div>
 
-    //             <div class="recent-play-detail">
-    //                 <p class="first-text">${songs.podName}</p>
-    //                 <p class="padding-text"></p>
-    //                 <p class="second-text">${songs.author}</p>
-    //             </div>
-    //         </div>
-    //     </div>
+                    <div class="recent-btn-display">
+                        <button>
+                            <img src="./assets/images/add.svg" alt="play">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `
+    })
 
-
-    //     <div class="recent-play-button-container">
-    //         <div class="recent-play-duration">
-    //             <p>12:90</p>
-    //         </div>
-    //         <div class="recent-btn-display">
-    //             <button class="song-list-play">
-    //                 <img src="./assets/images/play.svg" alt="play">
-    //             </button>
-    //         </div>
-
-    //         <div class="recent-btn-display">
-    //             <button>
-    //                 <img src="./assets/images/add.svg" alt="play">
-    //             </button>
-    //         </div>
-    //     </div>
-    // </div>
-    // `)
-
-    // podList.innerHTML = songDisplay;
-
-    console.log(songListPlay)
+    podList.innerHTML = html;
 
 
 
-    songListPlay.forEach(element => {
+    console.log(songListPlayBtn);
+
+
+
+    songListPlayBtn.forEach(element => {
         element.addEventListener("click", () => {
-            console.log("played")
+            console.log("played");
         })
     });
 
@@ -159,30 +119,7 @@ window.addEventListener("load", () => {
 
 
 
-    // pausePlay.addEventListener("click", () => {
-    //     pauseSvgPlay.src = "./assets/images/play.svg"
-    // })
-
-
     // play();
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 })
